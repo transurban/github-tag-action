@@ -11,6 +11,7 @@ source=${SOURCE:-.}
 dryrun=${DRY_RUN:-false}
 initial_version=${INITIAL_VERSION:-0.0.0}
 tag_context=${TAG_CONTEXT:-repo}
+prefix=${TAG_PREFIX:}
 suffix=${PRERELEASE_SUFFIX:-beta}
 verbose=${VERBOSE:-true}
 
@@ -118,8 +119,11 @@ echo $part
 # did we get a new tag?
 if [ ! -z "$new" ]
 then
-	# prefix with 'v'
-	if $with_v
+	# if TAG_PREFIX is set
+	if $TAG_PREFIX != ""
+	then
+		new="$TAG_PREFIX$new"
+	elif $with_v # prefix with 'v' 
 	then
 		new="v$new"
 	fi
