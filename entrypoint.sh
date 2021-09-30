@@ -120,9 +120,8 @@ echo $part
 # did we get a new tag?
 if [ ! -z "$new" ]
 then
-	# if TAG_PREFIX is set
-	if $prefix != ""
-	then
+	# if prefix (TAG_PREFIX) was set
+	if [[ $prefix != "" ]]; then
 		new="$prefix$new"
 	elif $with_v # prefix with 'v' 
 	then
