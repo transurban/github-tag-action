@@ -41,6 +41,7 @@ _NOTE: set the fetch-depth for `actions/checkout@v2` to be sure you retrieve all
 - **GITHUB_TOKEN** **_(required)_** - Required for permission to tag the repo.
 - **DEFAULT_BUMP** _(optional)_ - Which type of bump to use when none explicitly provided (default: `minor`).
 - **WITH_V** _(optional)_ - Tag version with `v` character.
+- **TAG_PREFIX** _(optional)_ - Tag version with a custom prefixed string.
 - **RELEASE_BRANCHES** _(optional)_ - Comma separated list of branches (bash reg exp accepted) that will generate the release tags. Other branches and pull-requests generate versions postfixed with the commit hash and do not generate any tag. Examples: `master` or `.*` or `release.*,hotfix.*,master` ...
 - **CUSTOM_TAG** _(optional)_ - Set a custom tag, useful when generating tag based on f.ex FROM image in a docker image. **Setting this tag will invalidate any other settings set!**
 - **SOURCE** _(optional)_ - Operate on a relative path under $GITHUB_WORKSPACE.
